@@ -4,7 +4,6 @@ drupal:
   site:
     profile: "minimal"
     name: "Training Nuvole"
-    generate_db_url: false
     existing_config: true
   account:
     name: admin
