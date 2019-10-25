@@ -6,6 +6,7 @@ Destination Drupal8 site for the DrupalCon Amsterdam 2019 migration training.
 
 * `Master` contains the basic site installation
 * `MIGRATIONS` contains the migration setup, configuration and code
+* `LANGUAGES` contains blog post translations and migration derivatives for their import
 
 ## Setup
 
