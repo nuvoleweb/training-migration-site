@@ -1,0 +1,8 @@
+name: Nivole migrations
+description: 'Migrates content into the site'
+type: module
+package: Nuvole
+core: 8.x
+dependencies:
+  - drupal:migrate
+  - migrate_plus:migrate_plus
