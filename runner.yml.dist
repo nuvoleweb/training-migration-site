@@ -1,0 +1,21 @@
+drupal:
+  root: "web"
+  base_url: "http://nginx"
+  site:
+    profile: "minimal"
+    name: "Training Nuvole"
+    generate_db_url: false
+    existing_config: true
+  account:
+    name: admin
+    password: admin
+  database:
+    host: "mariadb"
+    port: "3306"
+    name: "drupal"
+    user: "drupal"
+    password: "drupal"
+
+commands:
+  setup:phpunit:
+    - { task: "process", source: "phpunit.xml.dist", destination: "phpunit.xml" }

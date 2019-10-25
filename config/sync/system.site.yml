@@ -1,0 +1,14 @@
+uuid: af77361a-28fa-4256-beee-7ca33e18b757
+name: 'Training Nuvole'
+mail: info@example.org
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
