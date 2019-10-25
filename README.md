@@ -25,12 +25,12 @@ To run the migrations, download the JSON files into the `sites/default/files/mig
 Then you can run the migrate commands:
 
 ```
-$ docker-compose exec php migrate:status
-$ docker-compose exec php migrate:import blog --update
+$ docker-compose exec php ./vendor/bin/drush migrate:status
+$ docker-compose exec php ./vendor/bin/drush migrate:import blog --update
 ```
 
 Or to rollback:
 
 ```
-$ docker-compose exec php migrate:rollback blog
+$ docker-compose exec php ./vendor/bin/drush migrate:rollback blog
 ```
