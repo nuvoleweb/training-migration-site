@@ -35,7 +35,7 @@ class JsonDirectory extends DataFetcherPluginBase {
    */
   public function getResponse($url) {
     $json = [
-      'articles' => [],
+      'blog' => [],
     ];
     foreach (scandir($url) as $file) {
       $info = pathinfo($file);
