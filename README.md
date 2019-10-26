@@ -16,6 +16,7 @@ Destination Drupal8 site for the DrupalCon Amsterdam 2019 migration training.
 $ docker-compose up -d
 $ docker-compose exec php composer install
 $ docker-compose exec php ./vendor/bin/run drupal:site-install
+$ docker-compose exec php ./vendor/bin/run setup:phpunit
 ```
 
 Go to [http://localhost:8080](http://localhost:8080) and you have a Drupal site running with the module and its dependencies!
@@ -33,4 +34,10 @@ Or to rollback:
 
 ```
 $ docker-compose exec php ./vendor/bin/drush migrate:rollback blog
+```
+
+Once you ran the migrations, you can run the PHPUnit tests that validate that all the nodes have been correctly imported. Note: the test setup is for demonstration purposes only and does not scale to large migrations in the current form.
+
+```
+$ docker-compose exec php ./vendor/bin/phpunit ./web/modules/custom
 ```

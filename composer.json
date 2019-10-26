@@ -32,7 +32,8 @@
     },
     "require-dev": {
         "openeuropa/task-runner": "^1.0.0-beta6",
-        "webflo/drupal-core-require-dev": "^8.7.0"
+        "webflo/drupal-core-require-dev": "^8.7.0",
+        "weitzman/drupal-test-traits": "^1.3"
     },
     "conflict": {
         "drupal/drupal": "*"
