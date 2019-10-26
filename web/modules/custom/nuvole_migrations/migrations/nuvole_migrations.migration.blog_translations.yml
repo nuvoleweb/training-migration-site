@@ -1,0 +1,68 @@
+id: blog_translations
+label: Blog post translations
+migration_group: nuvole_migrations
+deriver: Drupal\nuvole_migrations\BlogPostLanguageDeriver
+source:
+  plugin: url
+  data_fetcher_plugin: json_directory
+  data_parser_plugin: json
+  item_selector: blog
+  fields:
+    -
+      name: id
+      label: 'The post ID'
+      selector: data/id
+    -
+      name: title
+      label: 'The post title'
+      selector: data/attributes/title/0
+    -
+      name: subtitle
+      label: 'The post subtitle'
+      selector: data/attributes/subtitle/0
+    -
+      name: body_value
+      label: 'The body value'
+      selector: data/attributes/body_value/0
+    -
+      name: created
+      label: 'The created date'
+      selector: meta/created
+    -
+      name: changed
+      label: 'The changed date'
+      selector: meta/changed
+    -
+      name: status
+      label: 'The status of the post'
+      selector: meta/status
+  ids:
+    id:
+      type: integer
+process:
+  type:
+    plugin: default_value
+    default_value: blog_post
+  nid:
+    plugin: migration_lookup
+    source: id
+    migration: blog
+  title: title
+  field_subtitle: subtitle
+  'body/value': body_value
+  'body/format':
+    plugin: default_value
+    default_value: html
+  content_translation_source:
+    plugin: default_value
+    default_value: 'en'
+  created: created
+  changed: changed
+  status: status
+destination:
+  plugin: 'entity:node'
+  translations: true
+
+migration_dependencies:
+  required:
+    - blog

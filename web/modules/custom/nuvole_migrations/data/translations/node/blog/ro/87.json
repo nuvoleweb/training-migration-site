@@ -1,0 +1,56 @@
+{
+    "data": {
+        "type": "blog",
+        "id": "87",
+        "attributes": {
+            "attachments_description": [
+                "CMI 2.0 Devdays Cluj-Napoca slides"
+            ],
+            "attachments_display": [
+                "1"
+            ],
+            "attachments_filemime": [
+                "application\/pdf"
+            ],
+            "attachments_filename": [
+                "CMI 2.0 Devdays 2019.pdf"
+            ],
+            "attachments_filesize": [
+                "954989"
+            ],
+            "attachments_status": [
+                "1"
+            ],
+            "attachments_timestamp": [
+                "1560435947"
+            ],
+            "attachments_uri": [
+                "public:\/\/CMI 2.0 Devdays 2019.pdf"
+            ],
+            "body_summary": [
+                ""
+            ],
+            "body_value": [
+                "<p>Astăzi am prezentat actualizările CMI 2.0 la drupal dev days din Cluj-Napoca. \nSesiunea a decurs bine și am primit feedback bun și am avut conversații interesante despre managementul configurației după aceasta.<\/p>\n<p>Diapozitivele pe care le-am prezentat sunt atașate. </p>\n<p>Există o mulțime de probleme la care să lucrați, alăturați-ne în sala sprint sau pe #config drupal slack.\nGăsiți mai multe informații <a href=\"https:\/\/www.drupal.org\/project\/cmi2\">pe pagina proiectului CMI 2<\/a> și tichete etichetate <a href=\"https:\/\/www.drupal.org\/project\/issues\/search?issue_tags=CMI%202.0%20candidate\">CMI 2.0 candiate<\/a><\/p>\n<iframe src=\"\/\/www.slideshare.net\/slideshow\/embed_code\/key\/lks6yLBQeyBvXF\" width=\"595\" height=\"485\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> <\/iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"\/\/www.slideshare.net\/nuvoleweb\/cmi-20-session-at-drupal-devdays-in-clujnapoca\" title=\"CMI 2.0 session at Drupal DevDays in Cluj-Napoca\" target=\"_blank\">CMI 2.0 session at Drupal DevDays in Cluj-Napoca<\/a> <\/strong> from <strong><a href=\"https:\/\/www.slideshare.net\/nuvoleweb\" target=\"_blank\">Nuvole<\/a><\/strong> <\/div>"
+            ],
+            "subtitle": [
+                "Diapozitive de sesiune pentru sesiunile CMI 2.0 de zile dev"
+            ],
+            "title": [
+                "Sesiunea CMI 2.0 la Drupaldevdays din Cluj-Napoca"
+            ]
+        },
+        "links": {
+            "self": "http:\/\/example.com\/blog\/87"
+        }
+    },
+    "meta": {
+        "changed": "1560499047",
+        "created": "1560435947",
+        "language": "und",
+        "promote": "0",
+        "revision_id": "566",
+        "status": "1",
+        "sticky": "0"
+    }
+}

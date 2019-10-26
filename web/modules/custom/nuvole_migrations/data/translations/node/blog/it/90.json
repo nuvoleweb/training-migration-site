@@ -1,0 +1,64 @@
+{
+    "data": {
+        "type": "blog",
+        "id": "90",
+        "attributes": {
+            "attachments_description": [
+                "",
+                ""
+            ],
+            "attachments_display": [
+                "0",
+                "0"
+            ],
+            "attachments_filemime": [
+                "image\/jpeg",
+                "image\/jpeg"
+            ],
+            "attachments_filename": [
+                "migration-middle-format-process.jpg",
+                "migration-standard-process.jpg"
+            ],
+            "attachments_filesize": [
+                "50619",
+                "27283"
+            ],
+            "attachments_status": [
+                "1",
+                "1"
+            ],
+            "attachments_timestamp": [
+                "1571573721",
+                "1571573721"
+            ],
+            "attachments_uri": [
+                "public:\/\/migration-middle-format-process_0.jpg",
+                "public:\/\/migration-standard-process.jpg"
+            ],
+            "body_summary": [
+                ""
+            ],
+            "body_value": [
+                "<p><em>Nuvole offre una formazione alla DrupalCon Amsterdam: \"<a href=\"https:\/\/\/\/events.drupal.org\/amsterdam2019\/drupal-8-migration-processo\">Drupal 8 La migrazione come processo<\/a>\". - <a href=\"https:\/\/\/events.drupal.org\/amsterdam2019\/training\">registratevi fino al 27 ottobre<\/a>.<\/em><\/p>\n<p>Quando dovete importare dati su un sito Drupal 8 non c'è altra scelta che affidarsi al core&rsquo;s <a href=\"https:\/\/\/wwwww.google.com\/url?q=https:\/\/\/www.drupal.org\/docs\/docs\/8\/api\/migrate-api&amp;sa=D&amp;ust=1571571576341123000\">Migrate API<\/a> e il suo ecosistema contributivo. La Migrate API in Drupal 8 implementa un classico <a href=\"https:\/\/\/\/www.google.com\/url?q=http:\/\/wikipedia.org/wiki\/Extract,_transform,_load&amp;sa=D&amp;ust=1571571576341124000\">Extract, Transform, Load (ETL) process<\/a>, con i seguenti colpi di scena Drupal-lingo\":<\/p>\n<ul>\n <li>La fase di estrazione si chiama \"source\" e utilizza un plugin sorgente per leggere dati da sistemi esterni, sia esso un database Drupal 7, un file CSV, un servizio web REST, ecc.<\/li>\n <li>La fase di trasformazione si chiama \"process\" e utilizza plugin di processo per elaborare e trasformare i dati<\/li>\n <li>La fase di carico si chiama \"destination\" e utilizza plugin di destinazione per importare i dati in specifici Drupal 8 entity storage (e.g. nodi, termini tassonomia, etc.)</li></ul>\n<p>Per ricapitolare, Drupal core implementa il processo ETL come segue:<\/p>\n<ul>\n <li>I plugin sorgente estraggono i dati dalla sorgente.<\/li>\n <li>I plugin di processo trasformano i dati.<\/li>\n <li>I plugin di destinazione salvano i dati come entità Drupal 8.</li><\/ul>\n<p><img src=\"https:\/\/\/\/nuvole.org\/sites\/default\/files\/files\/migration-standard-process.jpg\/><\/p>\n<h2>Limitazioni del processo standard Drupal 8 ETL<\/h2>\n<p>Nel processo sopra descritto i tre passi sono eseguiti nello stesso momento, in sequenza, ogni volta che eseguiamo un'importazione di migrazione. In questo scenario perdiamo uno degli aspetti più importanti di un processo ETL: testare e convalidare i dati prima dell'importazione.<\/p>\n<p>Inoltre, il processo di cui sopra si adatta facilmente a molteplici fonti di dati da consolidare in un unico, coerente, set di dati. Con Drupal Migrate API questo è possibile solo utilizzando il plugin sorgente concatenato, e può essere eseguito solo sul sito di destinazione. Questo è un limite negli scenari aziendali complessi, dove i dati visualizzati sono spesso il risultato di trasformazioni complesse e contorte nel backend.<\/p>\n<h2>Un approccio di medio formato<\/h2>\n<p>A Nuvole abbiamo adottato il cosiddetto approccio di medio formato\". Il processo sposta semplicemente l'estratto e trasforma le parti al di fuori di Drupal per facilitare la produzione di un dataset facile da importare, in un ben noto formato medio (come JSON API).<\/p>\n<p>Questo approccio si è dimostrato molto efficace in scenari complessi e, pur sfruttando completamente il processo di migrazione standard di Drupal 8, permette anche di farlo:<\/p>\n<ol>\n <li>Dati aggregati da diverse fonti (non solo database Drupal 7)<\/li>\n <li>Testare il processo di trasformazione dei dati<\/li>\n <li>Testare i dati importati di Drupal 8<\/li>\n <li>Automatizzare facilmente i punti sopra<\/li>\n\n<\/ol>\n<p>Il processo appare come il seguente:<\/p>\n<p><img src=\"https:\/\/\/\/nuvole.{\/sites\/default\/files\/migration-middle-format-process.jpg\"\/><\/p>\n<p>L'approccio sopra descritto porta i seguenti benefici:<\/p>\n<ul>\n <li>I dati esportati possono essere rivisti dal cliente e iterativamente raffinati<\/li>\n <li>Poiché Drupal 8 non è un prerequisito per esportare e trasformare i dati, la costruzione del sito di esportazione dati può funzionare in parallelo, rendendo l'intero processo di migrazione molto più efficiente<\/li>\n <li>I dati esportati possono essere presentati ai diversi stakeholder utilizzando un'interfaccia utente facile da usare, anche prima di iniziare qualsiasi sviluppo di Drupal 8<\/li>\n <li>Poiché i dati utilizzano un noto formato intermedio che costruisce il processo di importazione (come Drupal core&rsquo;s Migrate plugins) è semplice e permette di massimizzare la riutilizzabilità del codice<\/li>\n\n</ul>\n<h2>Medio formato di migrazione al lavoro<\/h2>\n<p>A Nuvole abbiamo utilizzato con successo l'approccio del formato medio per trasformare, rivedere e importare dati in modo incrementale per diversi anni, su siti complessi come il <a href=\"https:\/\/\/\/wfp.org\">Sito principale del Programma Alimentare Mondiale<\/a>. In questo scenario abbiamo dovuto consolidare i dati provenienti da due siti Drupal 7 (più una serie di fonti di dati esterni) in 13 lingue diverse, in un periodo di due anni.<\/p>\n<p>Abbiamo recentemente aperto una versione semplificata dello strumento che abbiamo usato per esportare e trasformare i dati, è possibile trovare il suo codice della caldaia <a href=\"https:\/\/\/\/github.com/nuvoleweb\/drupal-medio-format-migration\">here<\/a>.<\/p>\n<p>I nostri prossimi <a href=\"https:\/\/\/events.drupal.org\/amsterdam2019\/drupal-8-migration-process\">DrupalCon Amsterdam training<\/a>.<\/p>."
+            ],
+            "subtitle": [
+                "Supercharge the Drupal 8 migration process by externalizing data export and transformation."
+            ],
+            "title": [
+                "Un approccio di medio formato per le migrazioni Drupal 8 complesse e incrementali."
+            ]
+        },
+        "links": {
+            "self": "http:\/\/example.com\/blog\/90"
+        }
+    },
+    "meta": {
+        "changed": "1571589150",
+        "created": "1571588970",
+        "language": "und",
+        "promote": "0",
+        "revision_id": "582",
+        "status": "1",
+        "sticky": "0"
+    }
+}
